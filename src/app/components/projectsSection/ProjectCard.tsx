@@ -56,6 +56,11 @@ export default function ProjectCard({
           <p className="text-sm text-gray-700 line-clamp-2">{project.intro}</p>
         </div>
 
+        <div className="flex flex-wrap gap-2 mt-2">
+          {project.stacks?.map((stack:string) => (
+            <StackIcons key={stack} stack={stack} />
+          ))}
+        </div>
       </div>
     </article>
   );

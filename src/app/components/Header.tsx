@@ -7,8 +7,7 @@ export default function Header() {
         <h1 className="ml-10 font-hambakk text-7xl text-gray-700">Pinn .</h1>
         <nav className="space-x-6">
           <a href="#about" className="text-gray-600 hover:text-black transition text-2xl">About</a>
-          <a href="#skills" className="text-gray-600 hover:text-black transition text-2xl">Skills</a>
-          <a href="#projects" className="text-gray-600 hover:text-black transition text-2xl">Projects</a>
+          <a href="#skills" className="text-gray-600 hover:text-black transition text-2xl">Github</a>
           <a href="#contact" className="text-gray-600 hover:text-black transition text-2xl">Contact</a>
         </nav>
       </div>

@@ -19,5 +19,5 @@ export interface ProjectData {
   githubUrl: string;
   docsUrl?: string;
   serviceUrl?: string;
-  images?: number;       // 이미지 수 (옵션)
+  images?: string[];
 }

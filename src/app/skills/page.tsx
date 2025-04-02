@@ -1,6 +1,6 @@
-import SkillGroup from "../components/skillsSection/SkillGroup";
-import { Link } from "lucide-react";
+import SkillGroup from "../components/skillsSection/SkillGroups";
 import {
+  Link,
   Code2,
   Paintbrush,
   ServerCog,

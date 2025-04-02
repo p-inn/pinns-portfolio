@@ -1,13 +1,17 @@
+import { LucideIcon } from "lucide-react";
+
 interface SkillGroupProps {
   title: string;
+  Icon: LucideIcon;
   skills: { name: string; color: string }[];
 }
 
-export default function SkillGroup({ title, skills }: SkillGroupProps) {
+export default function SkillGroup({ title, Icon, skills }: SkillGroupProps) {
   return (
-    <div className="flex items-start gap-16 w-full flex-col md:flex-row">
-      <div className="w-32 shrink-0">
-        <h3 className="font-bold text-2xl text-gray-800 font-hambakk whitespace-nowrap">
+    <div className="flex items-start gap-10 w-full flex-col md:flex-row">
+      <div className="w-40 shrink-0">
+        <h3 className="font-bold text-2xl text-gray-800 font-hambakk whitespace-nowrap flex items-center">
+        <Icon className="inline-block align-middle w-6 h-6 mr-2" />
           {title}
         </h3>
       </div>

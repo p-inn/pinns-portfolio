@@ -32,16 +32,16 @@ export default function ProjectCard({
       <div className="flex flex-col justify-between p-5 h-[40%]">
         <div className="mb-2">
           <div className="flex justify-between items-center mb-1">
-            <h3 className="text-lg font-bold truncate">{project.title}</h3>
+            <h3 className="text-xl font-bold truncate">{project.title}</h3>
             <div className="flex flex-wrap gap-1">
               {project.category?.map((tag:string) => (
                 <span
                   key={tag}
-                  className={`text-xs text-white px-2 py-0.5 rounded-md ${
+                  className={`text-xs text-white px-2 py-0.5 rounded-full ${
                     tag === "Team"
-                      ? "bg-red-500"
-                      : tag === "Personal"
-                      ? "bg-yellow-600"
+                      ? "bg-sky-500"
+                      : tag === "personal"
+                      ? "bg-red-400"
                       : "bg-green-500"
                   }`}
                 >
@@ -50,10 +50,10 @@ export default function ProjectCard({
               ))}
             </div>
           </div>
-          <p className="text-gray-500 text-sm mb-1">
+          <p className="text-gray-500 text-base mb-1">
             {project.startDate} ~ {project.endDate}
           </p>
-          <p className="text-sm text-gray-700 line-clamp-2">{project.intro}</p>
+          <p className="text-lg text-gray-700 line-clamp-2">{project.intro}</p>
         </div>
 
         <div className="flex flex-wrap gap-2 mt-2">

@@ -3,6 +3,7 @@ import { ProjectData } from "@/app/types/projectTypes";
 import dynamic from "next/dynamic";
 import { HeartHandshake, WandSparkles, Activity, Flame, Link } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
 
 interface ProjectModalProps {
   project: ProjectData | null;
@@ -113,20 +114,32 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             <p className="text-gray-500 mb-4">이미지를 클릭하면 크게 볼 수 있습니다.</p>
             <div className="grid grid-cols-3 gap-5">
               {project.images.map((src, idx) => (
-                <img
+                <div
                   key={idx}
-                  src={src}
-                  alt={`screenshot-${idx}`}
-                  onClick={() => setSelectedImage(src)} 
-                  className="w-[350px] h-[300px] border border-gray-300 rounded-md hover:scale-105 cursor-pointer"
-                />
+                  className="w-[350px] h-[250px] overflow-hidden border border-gray-300 rounded-md hover:scale-105 transition cursor-pointer"
+                  onClick={() => setSelectedImage(src)}
+                >
+                  <Image
+                    src={src}
+                    alt={`screenshot-${idx}`}
+                    width={500}
+                    height={450}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               ))}
             </div>
           </div>
         )}
         {selectedImage && (
           <div className="fixed inset-0 bg-black bg-opacity-70 z-50 flex justify-center items-center" onClick={() => setSelectedImage(null)}>
-            <img src={selectedImage} className="max-w-[90%] max-h-[90%] rounded-lg shadow-lg" />
+            <Image 
+              src={selectedImage} 
+              alt={`screenshot-${selectedImage}`} 
+              width={800}
+              height={700}
+              className="rounded-lg shadow-lg"
+            />
           </div>
         )}
         </div>

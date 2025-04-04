@@ -1,23 +1,23 @@
-name: Deploy to Vercel
+# name: Deploy to Vercel
 
-on:
-  push:
-    branches:
-      - develop
+# on:
+#   push:
+#     branches:
+#       - develop
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v3
 
-      - name: Install Vercel CLI
-        run: npm install -g vercel
+#       - name: Install Vercel CLI
+#         run: npm install -g vercel
 
-      - name: Link Vercel Project
-        run: vercel link --token=${{ secrets.VERCEL_TOKEN }} --yes --project-id=${{ secrets.VERCEL_PROJECT_ID }}
+#       - name: Link Vercel Project
+#         run: vercel link --token=${{ secrets.VERCEL_TOKEN }} --yes --project-id=${{ secrets.VERCEL_PROJECT_ID }}
 
-      - name: Deploy to Vercel
-        run: vercel --prod --yes --token=${{ secrets.VERCEL_TOKEN }}
+#       - name: Deploy to Vercel
+#         run: vercel --prod --yes --token=${{ secrets.VERCEL_TOKEN }}

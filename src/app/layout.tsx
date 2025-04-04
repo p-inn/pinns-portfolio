@@ -8,6 +8,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <link rel="icon" href="/pinn-favicon1.png" />
       <body className='font-pretendard w-full bg-white'>{children}</body>
     </html>
   );

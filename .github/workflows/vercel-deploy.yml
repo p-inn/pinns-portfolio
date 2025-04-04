@@ -19,7 +19,6 @@ jobs:
       - name: Create vercel.json
         run: |
           echo '{
-            "orgId": "${{ secrets.VERCEL_ORG_ID }}",
             "projectId": "${{ secrets.VERCEL_PROJECT_ID }}"
           }' > vercel.json
 

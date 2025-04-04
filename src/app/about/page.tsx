@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-import { Laptop, AtSign, Send } from "lucide-react";
+import { Laptop, AtSign } from "lucide-react";
 export default function AboutPage() {
   return (
     <>

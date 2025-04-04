@@ -23,17 +23,19 @@ export default function Home() {
   return (
     <div>
       <MotionWrapper />
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.2 }}
-      >
-        <AboutPage />
-        <SkillPage />
-        <ProjectsPage />
-        <EducationPage />
-        <Footer />
-      </motion.div>
+      {showContent && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2 }}
+        >
+          <AboutPage />
+          <SkillPage />
+          <ProjectsPage />
+          <EducationPage />
+          <Footer />
+        </motion.div>
+      )}
     </div>
   );
 }

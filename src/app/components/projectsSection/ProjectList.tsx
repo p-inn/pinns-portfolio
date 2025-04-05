@@ -6,6 +6,14 @@ import ProjectCard from './ProjectCard';
 import ProjectModal from './ProjectModal';
 import { ProjectData } from '@/app/types/projectTypes';
 
+const containerVariants = {
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
 const cardVariants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
@@ -16,20 +24,23 @@ export default function ProjectsList({ projects }: { projects: ProjectData[] }) 
 
   return (
     <>
-      <div className="flex flex-wrap justify-center gap-10">
+      <motion.div
+        className="flex flex-wrap justify-center gap-10"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.3 }} 
+      >
         {projects.map((project) => (
           <motion.div
             key={project.id}
             className="w-[360px] sm:w-[360px] md:w-[400px] flex-shrink-0"
             variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.2 }}
           >
             <ProjectCard project={project} onClick={() => setSelected(project)} />
           </motion.div>
         ))}
-      </div>
+      </motion.div>
       <ProjectModal project={selected} onClose={() => setSelected(null)} />
     </>
   );

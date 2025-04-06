@@ -29,12 +29,12 @@ export default function ProjectsList({ projects }: { projects: ProjectData[] }) 
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.3 }} 
+        viewport={{ once: false, amount: 0.1 }} 
       >
         {projects.map((project) => (
           <motion.div
             key={project.id}
-            className="w-[360px] sm:w-[360px] md:w-[400px] flex-shrink-0"
+            className="w-[90%] max-w-[400px] flex-shrink-0"
             variants={cardVariants}
           >
             <ProjectCard project={project} onClick={() => setSelected(project)} />

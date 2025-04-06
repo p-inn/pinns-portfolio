@@ -1,10 +1,17 @@
 "use client";
-import { ProjectData } from "@/app/types/projectTypes";
-import dynamic from "next/dynamic";
-import { HeartHandshake, WandSparkles, Activity, Flame, Link, CircleX } from "lucide-react";
+
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-
+import { ProjectData } from "@/app/types/projectTypes";
+import dynamic from "next/dynamic";
+import {
+  HeartHandshake,
+  WandSparkles,
+  Activity,
+  Flame,
+  Link,
+  CircleX,
+} from "lucide-react";
 import Image from "next/image";
 
 interface ProjectModalProps {
@@ -42,41 +49,10 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           exit={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.25, ease: "easeOut" }}
         >
-          <button className="absolute top-3 right-3" onClick={onClose}>
-          <CircleX className="w-10 h-10 text-gray-700" />
-          </button>
-
-          <div className="flex flex-col justify-center items-center gap-3 w-4/5 mx-auto">
-            <h2 className="text-4xl font-pretendardBold mb-2">
-              {project.title}
-            </h2>
-            <p className="text-gray-700 mb-6 whitespace-pre-wrap leading-relaxed text-lg">
-              {project.startDate} ~ {project.endDate}
-            </p>
-            <div className="flex flex-wrap gap-2 mt-2 justify-center">
-              {project.stacks?.map((stack: string) => (
-                <StackIcons key={stack} stack={stack} />
-              ))}
-            </div>
-            <p className="text-gray-700 mb-6 whitespace-pre-wrap leading-relaxed text-center text-lg">
-              {project.description}
-            </p>
-            <div className="flex gap-10">
-              <a
-                href={project.githubUrl}
-                className="flex items-center text-xl font-elice"
-              >
-                <Link className="inline-block w-6 h-6 mr-2 text-gray-600" />
-                Github.
-              </a>
-              <a
-                href={project.docsUrl}
-                className="flex items-center text-xl font-elice"
-              >
-                <Link className="inline-block w-6 h-6 mr-2 text-gray-600" />
-                Notion.
-              </a>
-            </div>
+          <div className="sticky top-0 bg-white z-10 flex justify-end p-4 rounded-2xl">
+            <button onClick={onClose}>
+              <CircleX className="w-10 h-10 text-gray-700" />
+            </button>
           </div>
 
           <hr className="bg-gray-800 my-4 min-w-full" />

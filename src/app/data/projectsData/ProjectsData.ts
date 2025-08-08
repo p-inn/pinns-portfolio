@@ -183,7 +183,7 @@ export const projects: ProjectData[] = [
 
     ],
     contribution: [],
-    startDate: "2024-04-18",
+    startDate: "2025-04-18",
     endDate: "진행중",
     category: ["personal"],
     path: "/pinn-profile.png",
@@ -194,4 +194,68 @@ export const projects: ProjectData[] = [
     serviceUrl: "",
     images: []
   },
+  {
+    id: "pinn-bb",
+    title: "Pinn BB",
+    intro: "나만의 온라인 가계부, P📍nnBB",
+    description: `
+      매달 지출 내역을 쉽게 정리하지 못해 번번이 목표한 예산을 초과하는 경험이 반복되면서, 누구나 직관적으로 사용할 수 있고, 자신의 소비 패턴을 한눈에 확인할 수 있는 개인 맞춤형 가계부 서비스를 만들고자 했습니다. 
+      Pinn BB는 사용자가 수입·지출을 쉽고 빠르게 기록하고, 직관적으로 내역을 관리할 수 있도록 설계된 개인용 가계부 웹앱입니다. 직관적인 UI/UX, 모바일 최적화, 구글 소셜 로그인, 예산 내역 시각화 등 다양한 기능을 사용자 경험을 고려하며 구현했습니다.`,
+    points: [
+      "수입/지출 내역 등록, 수정, 삭제 기능",
+      "월별, 카테고리별 내역 필터링 및 정렬",
+      "대시보드를 통해 한눈에 나의 지출 및 소비를 파악할 수 있도록 구현",
+      "recharts를 활용한 차트와 그래프로 예산 현황 시각화",
+      "Zustand로 글로벌 상태 관리, React Query로 데이터 동기화",
+      "구글 소셜 로그인 및 Supabase 인증 적용",
+      "모바일 최적화 및 반응형 UI 구현"
+    ],
+    contribution: [
+      {
+        title: "핵심 기능 및 CRUD 구현",
+        detail: [
+          "React Hook Form 기반 예산 등록/수정/삭제 폼 개발",
+          "React Hook Form 로그인 및 회원가입 실시간 유효성 검사",
+          "React Query, Supabase를 통한 데이터 동기화 및 RLS 정책 적용"
+        ]
+      },
+      {
+        title: "상태 관리와 UX 최적화",
+        detail: [
+          "Zustand로 전역 모달/사용자 상태 관리",
+          "useMutation, useQuery를 통한 낙관적 UI 및 쾌적한 사용자 경험 구현",
+          "모바일 환경 대응(미디어 쿼리, 모바일 키패드, 인앱 브라우저 대응)"
+        ]
+      },
+      {
+        title: "시각화 및 UI 설계",
+        detail: [
+          "수입/지출 내역을 recharts를 활용한 PieChart 등 그래프로 시각화",
+          "최신순 카드 리스트와 상세 모달 UX 설계",
+          "framer-motion을 활용한 UX 개선",
+        ]
+      }
+    ],
+    startDate: "2024-07-01",
+    endDate: "진행중",
+    category: ["personal"],
+    path: "/images/pinn-BB.png",
+    featured: true,
+    stacks: [
+      "React", "NextJS", "TypeScript", "TailwindCSS",
+      "zustand", "react-query", "Supabase", "react-hook-form", "vercel"
+    ],
+    githubUrl: "https://github.com/p-inn/pinn-bb",
+    docsUrl: "",
+    serviceUrl: "https://pinn-bb.vercel.app",
+    images: [
+      "/images/PINN-BB/PinnBB-1.png",
+      "/images/PINN-BB/PinnBB-2.png",
+      "/images/PINN-BB/PinnBB-3.png",
+      "/images/PINN-BB/PinnBB-4.png",
+      "/images/PINN-BB/PinnBB-5.png",
+      "/images/PINN-BB/PinnBB-6.png",
+    ]
+  }
+
 ]

@@ -93,10 +93,17 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                     <Link className="inline-block w-6 h-6 mr-2 text-gray-600" />
                     Github.
                   </a>
-                  <a href={project.docsUrl} className="flex items-center text-xl font-elice">
-                    <Link className="inline-block w-6 h-6 mr-2 text-gray-600" />
-                    Notion.
-                  </a>
+                  {project.docsUrl ? (
+                    <a href={project.docsUrl} className="flex items-center text-xl font-elice" target="_blank" rel="noopener noreferrer">
+                      <Link className="inline-block w-6 h-6 mr-2 text-gray-600" />
+                      Notion.
+                    </a>
+                  ) : project.serviceUrl ? (
+                    <a href={project.serviceUrl} className="flex items-center text-xl font-elice" target="_blank" rel="noopener noreferrer">
+                      <Link className="inline-block w-6 h-6 mr-2 text-gray-600" />
+                      Service.
+                    </a>
+                  ) : null}
                 </div>
               </div>
 

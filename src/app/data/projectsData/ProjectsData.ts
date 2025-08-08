@@ -236,7 +236,7 @@ export const projects: ProjectData[] = [
         ]
       }
     ],
-    startDate: "2024-07-01",
+    startDate: "2025-07-01",
     endDate: "진행중",
     category: ["personal"],
     path: "/images/pinn-BB.png",
